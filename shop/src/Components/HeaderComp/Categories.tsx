@@ -1,10 +1,13 @@
-import {   Menu,  MenuButton, MenuDivider, MenuItemOption, MenuList, MenuOptionGroup } from "@chakra-ui/react";
+import {   Menu,  MenuButton, MenuDivider, MenuItemOption, MenuList, MenuOptionGroup, useDisclosure } from "@chakra-ui/react";
 
 
 export default function Categories() {
+  
+  const { isOpen, onOpen, onClose } = useDisclosure()
+    
   return (
-    <Menu closeOnSelect={false}>
-    <MenuButton>
+    <Menu isOpen={isOpen} closeOnSelect={false}>
+    <MenuButton onMouseOver={onOpen} >
   <div className="w-[218px] h-14 px-6 py-4 bg-green-600 justify-center items-center gap-2 inline-flex">
 
     <div className=" flex flex-row justify-center items-center gap-2 ">
@@ -17,20 +20,17 @@ export default function Categories() {
   
   </div></div>
     </MenuButton>
-    <MenuList className="w-[60vw]">
+    <MenuList className="w-[60vw]" onMouseLeave={onClose}>
       <MenuOptionGroup defaultValue='asc' title='Order' type='radio'>
         <MenuItemOption value='asc'>Ascending</MenuItemOption>
         <MenuItemOption value='desc'>Descending</MenuItemOption>
       </MenuOptionGroup>
       <MenuDivider />
-      <MenuOptionGroup   type='checkbox' style={{ display: 'flex',flexDirection:'row', flexWrap: 'wrap' }}>
+      <MenuOptionGroup   type='checkbox' style={{display:'flex'}}>
         
          <MenuItemOption w='20%'  value='email'>Email</MenuItemOption>
         <MenuItemOption  w='20%' value='phone'>Phone</MenuItemOption>
         <MenuItemOption w='20%'  value='country'>Country</MenuItemOption>
-        <MenuItemOption w='20%' value='email'>Email</MenuItemOption>
-        <MenuItemOption w='20%' value='phone'>Phone</MenuItemOption>
-        <MenuItemOption w='20%' value='country'>Country</MenuItemOption>  
       </MenuOptionGroup>
     </MenuList>
   </Menu>

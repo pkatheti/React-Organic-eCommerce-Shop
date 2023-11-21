@@ -1,6 +1,7 @@
 
 import './App.css'
 import Header from './Components/HeaderComp/Header'
+import CarouselComp from './Components/HomeComp/CarouselComp'
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <>
     <div className=''>
       <Header/>
+      <CarouselComp/>
       </div>
     </>
   )
