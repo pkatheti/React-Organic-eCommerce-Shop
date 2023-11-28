@@ -1,8 +1,12 @@
 import SmallNav from './SmallNav'
 import SearchNav from './SearchNav'
 import NavBar from './NavBar'
+import Hoc from '../Auth/Hoc'
 
-export default function Header() {
+
+ 
+
+ function Header(props:any) {
   return (
     <>
     <SmallNav/>
@@ -11,3 +15,6 @@ export default function Header() {
     </>
   )
 }
+
+
+export default Hoc(Header);
