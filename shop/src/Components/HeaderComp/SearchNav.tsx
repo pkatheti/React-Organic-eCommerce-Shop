@@ -1,4 +1,7 @@
+
 export default function SearchNav() {
+  
+
   return (
     <>
       <div className="w-[100%] px-[50px] h-[93px] flex flex-row justify-between items-center">

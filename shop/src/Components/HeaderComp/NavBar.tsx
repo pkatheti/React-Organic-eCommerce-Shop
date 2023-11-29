@@ -11,7 +11,6 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import Categories from "./Categories";
-import Hoc from "../Auth/Hoc";
 
  function NavBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();

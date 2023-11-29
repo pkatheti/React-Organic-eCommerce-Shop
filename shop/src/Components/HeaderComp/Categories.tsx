@@ -8,8 +8,10 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
+
 export default function Categories() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  
 
   return (
     <Menu isOpen={isOpen} closeOnSelect={false}>
@@ -20,7 +22,7 @@ export default function Categories() {
               <img src="src/assets/imges/Menu.png" className="w-[18px] h-3.5" />
             </div>
             <div className="w-28  text-zinc-100  font-primary text-sm font-medium  leading-[21px]">
-              All Categories
+              All Categories 
             </div>
             <img
               src="src/assets/imges/Group.png"

@@ -1,7 +1,10 @@
 import { useState } from "react";
 import data from "../../assets/JsonData/data.json";
+import { useAppSelector } from "../ReduxStore/hooks";
 
 export default function CarouselComp() {
+  const value : any = useAppSelector((state:any) => state.counter.value)
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const slides = data?.slides;
 
@@ -44,7 +47,7 @@ export default function CarouselComp() {
               <div className="w-[80px] h-[80px] bg-amber-500 rounded-full" />
               <div className="w-[45px] h-[34px] left-[18px] top-[11px] absolute flex-col justify-start items-center inline-flex">
                 <div className="text-center text-white text-[22px] font-semibold font-primary leading-[38.40px]">
-                  70%
+                  {value}%
                 </div>
                 <div className="text-center text-white text-base font-medium font-primary uppercase leading-none tracking-tight">
                   off
@@ -55,7 +58,7 @@ export default function CarouselComp() {
 
           <div className="flex flex-col justify-start gap-4">
             <div className="w-[436px] h-[156px] flex-col justify-start items-start gap-2 inline-flex">
-              <div className="text-center text-green-600 text-sm font-normal font-['Segoe Script'] uppercase leading-[14px] tracking-tight">
+              <div className="text-center text-green-600 text-sm font-normal font-primary uppercase leading-[14px] tracking-tight">
                 Welcome to shopery
               </div>
               <div className="w-[436px] text-green-950 text-[56px] font-semibold font-primary leading-[67.20px]">
