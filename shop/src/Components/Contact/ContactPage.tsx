@@ -1,5 +1,5 @@
 
-import { useFormik } from "formik/dist/Formik";
+import { useFormik } from "formik";
 import  Yup  from "yup";
 
 export default function ContactPage() {
@@ -66,13 +66,13 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-      <div className="w-[984px] h-[507px] relative">
+      <form  className="w-[984px] h-[507px] relative">
         <div className="w-[984px] h-[507px] left-0 top-0 absolute bg-white rounded-lg shadow" />
-        <div className="w-[199px] h-[51px] px-10 py-4 left-[50px] top-[406px] absolute bg-green-600 rounded-[43px] justify-center items-center gap-4 inline-flex">
+        <button className="w-[199px] h-[51px] px-10 py-4 left-[50px] top-[406px] absolute bg-green-600 rounded-[43px] justify-center items-center gap-4 inline-flex">
           <div className="text-white text-base font-semibold font-primary leading-tight">
             Send Message
           </div>
-        </div>
+        </button>
         <input
           type="text"
           placeholder="Subject"
@@ -103,7 +103,7 @@ export default function ContactPage() {
         <div className="left-[50px] top-[44px] absolute text-zinc-900 text-2xl font-semibold font-primary leading-9">
           Just Say Hello!
         </div>
-      </div>
+      </form>
     </div>
   );
 }
