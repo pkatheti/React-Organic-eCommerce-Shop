@@ -21,7 +21,7 @@ import { Increment } from '../ReduxStore/CounterSlice.ts'
     <SmallNav/>
     <SearchNav/>
     <NavBar/>
-    <button onClick={clinkingEvent}>Clickme <>{value}</></button>
+    {/* <button onClick={clinkingEvent}>Clickme <>{value}</></button> */}
     </>
   )
 }

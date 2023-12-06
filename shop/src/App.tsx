@@ -13,6 +13,10 @@ const AboutPage = React.lazy(
   () => import("./Components/AboutPage/AboutPage")
 );
 
+const ContactPage = React.lazy(
+  () => import("./Components/Contact/ContactPage")
+);
+
 function App() {
   return (
     
@@ -25,6 +29,7 @@ function App() {
           <Route path="home" element={<CarouselComp />}></Route>
           <Route path="page" element={<LoadingComp />}></Route>
           <Route path="about" element={<AboutPage />}></Route>
+          <Route path="contact" element={<ContactPage />}></Route>
 
           </Routes>
       </BrowserRouter>

@@ -92,15 +92,20 @@ import Categories from "./Categories";
               _selected={{ color: "green", h: "56px" }}
             >
               {" "}
-              About Us
+              <Link className="flex justify-center items-center" href="/about">
+                About US{" "}
+                
+              </Link>
             </Tab>
             <Tab
               className="text-zinc-500  font-primary text-sm font-medium  leading-[21px] "
               _hover={{ color: "green", h: "56px" }}
               _selected={{ color: "green", h: "56px" }}
             >
-              {" "}
-              Contact Us{" "}
+             <Link className="flex justify-center items-center" href="/contact">
+                Contact US{" "}
+                
+              </Link>
             </Tab>
           </TabList>
         </Tabs>
