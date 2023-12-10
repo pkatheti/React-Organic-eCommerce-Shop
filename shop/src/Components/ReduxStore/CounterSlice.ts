@@ -1,10 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit'
-
-interface counterState {
-    value: number
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { apiSlice } from './DemoCounterSlice';
+interface sharedData {
+    value: number,
+    deleteMsg : any
 };
-const initialState: counterState = {
+const initialState: sharedData = {
     value: 0,
+    deleteMsg : null,
+
     
 };
 
@@ -16,10 +19,18 @@ const counterSlice = createSlice({
         Increment(state) {
             state.value++;
         },
-        Decrement(state) {
-            state.value--;
+        Decrement(state, action: PayloadAction<number>) {
+            state.value += action.payload
         }
-    }
+    },
+    extraReducers: (builder) => {
+        builder.addMatcher(
+          apiSlice.endpoints.deleteItem.matchFulfilled,
+          (state, { payload }) => {
+            state.deleteMsg = payload
+          }
+        )
+      },
 });
 
 export const { Increment, Decrement } = counterSlice.actions;

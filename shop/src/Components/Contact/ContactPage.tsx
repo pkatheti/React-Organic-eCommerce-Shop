@@ -1,41 +1,34 @@
 
-import { useFormik } from "formik";
-import  Yup  from "yup";
+// import { useFormik } from "formik";
+import { object, string, number, date, InferType } from 'yup';
+// import SimpleMap from './GoogleMap';
 
 export default function ContactPage() {
-    const validationSchema = Yup.object().shape({
-        fullname: Yup.string().required('Fullname is required'),
-        username: Yup.string()
-          .required('Username is required')
-          .min(6, 'Username must be at least 6 characters')
-          .max(20, 'Username must not exceed 20 characters'),
-        email: Yup.string().required('Email is required').email('Email is invalid'),
-        password: Yup.string()
-          .required('Password is required')
-          .min(6, 'Password must be at least 6 characters')
-          .max(40, 'Password must not exceed 40 characters'),
-        confirmPassword: Yup.string()
-          .required('Confirm Password is required')
-          .oneOf([Yup.ref('password')], 'Confirm Password does not match'),
-        acceptTerms: Yup.bool().oneOf([true], 'Accept Terms is required'),
-      });
+
+    let userSchema = object({
+      name: string().required(),
+      age: number().required().positive().integer(),
+      email: string().email(),
+      website: string().url().nullable(),
+      createdOn: date().default(() => new Date()),
+    });
     
-      const formik = useFormik({
-        initialValues: {
-          fullname: '',
-          username: '',
-          email: '',
-          password: '',
-          confirmPassword: '',
-          acceptTerms: false,
-        },
-        validationSchema,
-        // validateOnChange: false,
-        // validateOnBlur: false,
-        onSubmit: (data) => {
-          console.log(JSON.stringify(data, null, 2));
-        },
-      });
+    //   const formik = useFormik({
+    //     initialValues: {
+    //       fullname: '',
+    //       username: '',
+    //       email: '',
+    //       password: '',
+    //       confirmPassword: '',
+    //       acceptTerms: false,
+    //     },
+    //     validationSchema,
+    //     // validateOnChange: false,
+    //     // validateOnBlur: false,
+    //     onSubmit: (data) => {
+    //       console.log(JSON.stringify(data, null, 2));
+    //     },
+    //   });
   return (
     <div className="flex w-[100%]  flex-row justify-between  gap-4 px-[54px] py-[54px]">
       <div className="w-[312px] h-[507px] px-5 bg-white rounded-lg shadow flex-col justify-start items-start inline-flex">
@@ -104,6 +97,8 @@ export default function ContactPage() {
           Just Say Hello!
         </div>
       </form>
+      {/* < SimpleMap  /> */}
+
     </div>
   );
 }
