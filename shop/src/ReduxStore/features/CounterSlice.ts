@@ -1,20 +1,18 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { apiSlice } from './DemoCounterSlice';
+import { testingApiSlice } from '../ApiJunction/apiEndPoints/TestingApiSlice';
+
 interface sharedData {
     value: number,
-    deleteMsg : any
+    deleteMsg: any
 };
 const initialState: sharedData = {
     value: 0,
-    deleteMsg : null,
-
-    
+    deleteMsg: null,
 };
 
 const counterSlice = createSlice({
     name: 'counter',
     initialState,
-
     reducers: {
         Increment(state) {
             state.value++;
@@ -25,12 +23,12 @@ const counterSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addMatcher(
-          apiSlice.endpoints.deleteItem.matchFulfilled,
-          (state, { payload }) => {
-            state.deleteMsg = payload
-          }
+            testingApiSlice.endpoints.deleteItem.matchFulfilled,
+            (state, { payload }) => {
+                state.deleteMsg = payload
+            }
         )
-      },
+    },
 });
 
 export const { Increment, Decrement } = counterSlice.actions;

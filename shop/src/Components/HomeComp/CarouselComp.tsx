@@ -1,9 +1,9 @@
 import { useState } from "react";
 import data from "../../assets/JsonData/data.json";
-import { useAppSelector } from "../ReduxStore/hooks";
+import { useAppSelector } from "../../ReduxStore/hooks";
 
 export default function CarouselComp() {
-  const value : any = useAppSelector((state:any) => state.counter.value)
+  const value: any = useAppSelector((state: any) => state.counter.value);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const slides = data?.slides;
@@ -107,7 +107,6 @@ export default function CarouselComp() {
           </div>
         ))}
       </div>
-    
     </>
   );
 }

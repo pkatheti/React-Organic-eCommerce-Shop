@@ -4,7 +4,7 @@ import App from './App.tsx'
 import { ChakraProvider } from '@chakra-ui/react'
 import './index.css'
 import { Provider } from 'react-redux'
-import {store} from './Components/ReduxStore/store.ts'
+import {store} from './ReduxStore/store.ts'
 
 
 

@@ -1,4 +1,4 @@
-import CounterSlice from "./CounterSlice";
+import CounterSlice from "./features/CounterSlice";
 
 const rootSlice: any = {
   counter: CounterSlice,
