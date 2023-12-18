@@ -11,9 +11,9 @@ function Header() {
   const dispatch = useAppDispatch();
   const toast = useToast();
   const [deleteItem, { isLoading }] = useDeleteItemMutation();
-  const { value, deleteMsg }: any = useAppSelector(
-    (state: any) => state.counter
-  );
+  // const { value, deleteMsg }: any = useAppSelector(
+  //   (state: any) => state.counter
+  // );
 
   const clinkingEvent = async () => {
     try {
@@ -37,10 +37,10 @@ function Header() {
       <SmallNav />
       <SearchNav />
       <NavBar />
-      <Button isLoading={isLoading} onClick={clinkingEvent}>
+      {/* <Button isLoading={isLoading} onClick={clinkingEvent}>
         Clickme <>{value}</>
       </Button>
-      <p>{deleteMsg?.status_Massage}</p>
+      <p>{deleteMsg?.status_Massage}</p> */}
     </>
   );
 }
